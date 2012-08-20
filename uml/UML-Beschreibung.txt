@@ -1,0 +1,15 @@
+9. UML-Klassen-Beschreibung
+Als Design-Pattern wurde MVCS verwendet. 
+
+Die View wurde in HTML / CSS umgesetzt. Der Javascript Code enthält keine Stilinformationen. Um Interaktivität zu gewährleisten generiert der Javascript Code die HTML Struktur je nach Situation um. So muss die index.html nie neugeladen werden.
+
+Der Controller wurde als Singleton angelegt, ebenfalls die Algorithms, da sie keinesfalls mehrfach vorkommen sollten. Der Controller erstellt jeweils eine(!) neue Instanz von Paper und Parameters. Diese initialisieren über den Konstruktor die Parameter. Parameters generiert dabei auch automatisch die Optionen in der Select-Box auf Basis der in Algorithms.js eingetragenen Algorithmen.
+
+Algorithms greift also auf die Parameter und das Paper immer über den Controller zu. (Bsp: Controller.paper.getSize();)
+
+Das Algorithms Singleton besteht wiederrum aus drei Objekten, Algorithms.title, Algorithms.prepare, Algorithms.draw. Diese enthalten jeweils wieder die Funktionen/Variablen der verschiedenen Algorithmen. So hat der Algorithmus "textChars" drei Einträge: Algorithms.title.textChars, Algorithms.prepare.textChars und Algorithms.draw.textChars. 
+Das hilft dabei diese Funktionen mittels for-Schleifen durchzulaufen. Die Optionen der Select Box können daher automatisch generiert werden, einfach nur durch einen weiteren Eintrag in der Algorithms.js. Es sind keine weiteren Änderungen an der View notwendig.
+
+Die Standard-Javascript Klasse "Math" habe ich um Math.rnd(minsize, maxsize) und Math.rndHex erweitert, um die Berechnungen in Algorithms.js und Parameters.js zu erleichtern.
+
+Als Service wurde download.php eingebunden, dieses Serverseitige Skript ändert die Header des SVG Exports, so dass die SVG Datei heruntergeladen werden kann. Rein clientseitiges Javascript unterstützt dies aus Sicherheitsgründen nicht.

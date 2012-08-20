@@ -1,0 +1,277 @@
+/*
+ html5doctor.com Reset Stylesheet
+ v1.6.1
+ Last Updated: 2010-09-17
+ Author: Richard Clark - http://richclarkdesign.com
+ Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+nav ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+a {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+/* change colours to suit your needs */
+ins {
+	background-color: #ff9;
+	color: #000;
+	text-decoration: none;
+}
+/* change colours to suit your needs */
+mark {
+	background-color: #ff9;
+	color: #000;
+	font-style: italic;
+	font-weight: bold;
+}
+del {
+	text-decoration: line-through;
+}
+abbr[title], dfn[title] {
+	border-bottom: 1px dotted;
+	cursor: help;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* change border colour to suit your needs */
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #CCC;
+	margin: 1em 0;
+	padding: 0;
+}
+input, select {
+	vertical-align: middle;
+}
+
+/****************************
+ * SVG Generator Stylesheet *
+ * Simon Heimler 2011       *
+ ****************************/
+
+/* Typography & Colors */
+
+body {
+	margin: 20px auto; /* Center */
+	width: 812px;
+	font-family: Verdana, Tahoma, "DejaVu Sans", sans-serif;
+	font-size: 0.75em;
+	line-height: 1.333em;
+	background: url(../img/bg.png) top center repeat-x #EBEBEB;
+	color: #111;
+}
+
+h1 {
+	font-size: 2.5em;
+	margin: 0.3em 0;
+}
+h1 a, h1 a:visited, h1 a:hover {
+	color: #000;
+	background: none;
+}
+h2 {
+	font-size: 1.2em;
+	color: #777;
+	margin: 0 0 0.3em 0;
+}
+h3 {
+	font-size: 1.3em;
+	border-bottom: 1px dashed #CCC;
+	padding-bottom: 2px;
+	margin-bottom: 7px;
+	color: #333;
+}
+p {
+	margin: 0 0 1em 0;
+}
+a, a:visited {
+	text-decoration: none;
+	color: #777;
+}
+a:hover {
+	background: #EEE;
+}
+
+table {
+	font-size: 0.8em;
+}
+
+.generated { /* Extra Parameters */
+	color: #777;
+}
+
+/* Layout */
+
+header, footer {
+	margin: 10px 0;
+	border-top: 1px dashed #CCC;
+	border-bottom: 1px dashed #CCC;
+}
+aside {
+	float: left;
+	width: 165px;
+	display: block;
+	margin: 0 5px 5px 0 ;
+}
+
+aside #generator,
+aside #parameter {
+	background: #FFF;
+	border: 1px solid #CCC;
+	margin: 0 0 5px 0;
+	padding: 5px;
+}
+
+#paper {
+	float: left;
+	width: 640px; /* 640 + 2*5 margin + 2*1 border */
+	height: 480px;
+	background: #FFF;
+	border: 1px solid #CCC;
+	padding: 0;
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+
+footer {
+	clear: both;
+	text-align: left;
+	color: #555;
+	font-size: 0.8em;
+}
+
+#benchmark {
+	float: right;
+}
+
+#content {
+	background: #FFF;
+	border: 1px solid #CCC;
+	padding: 7px;
+	margin: 5px 0;
+}
+
+#gallery {
+	text-align: center;
+	margin: 10px 2px;
+}
+
+#gallery a.colorbox {
+	display: block;
+	float: left;
+	width: 252px;
+	height: 172px;
+	border: 1px solid #CCC;
+	background: #EEE;
+	margin: 5px;
+	overflow: hidden;
+}
+
+#gallery a.colorbox:hover {
+	opacity: 0.8;
+}
+
+
+#gallery img {
+	
+}
+
+.clearfix {
+	clear: both;
+	padding: 3px 0;
+}
+
+/* Topmenu */
+nav#top_navigation {
+	margin: 3px 0;
+	float: right;
+	color: #CCC;
+}
+nav#top_navigation a {
+	padding: 0 2px;
+}
+
+/* Parameter Table */
+table {
+	vertical-align: bottom;
+}
+
+tr {
+	padding: 2px;
+}
+
+td {
+	padding: 2px;
+	vertical-align: middle;
+}
+tr:hover {
+	background: #F4F4F4;
+}
+
+tr.error {
+	background: #A40000;
+	color: #FFF;
+}
+
+#tdwidth {
+	/* Constant first td width fix */
+	width: 81px;
+}
+
+/* Forms */
+#generator button {
+	display: block;
+	margin: 5px 0;
+	width: 153px;
+}
+
+select {
+	width: 153px;
+}
+
+input {
+	width: 60px;
+}
+
+textarea {
+	width: 143px;
+	resize: vertical;
+}
+
+/* Misc Stuff */
+
+#paypalbutton {
+	display: inline;
+}
