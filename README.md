@@ -3,6 +3,7 @@ SVG Generator
 
 An online SVG Graphics Generation with the ability to export to SVG. 
 Use it online at http://www.svg-generator.de
+It is running purely in the Browser, PHP is only used to trick the browser into downloading the SVG to a File.
 
 Background
 ==========
