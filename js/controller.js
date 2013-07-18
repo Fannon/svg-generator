@@ -108,7 +108,7 @@ Controller.generate = function() {
 
 			alert('An Error occured while executing the Algorithm.\n' + e);
 			console.log(e);
-			
+
 		}
 
 		// Write Benchmark to Site
@@ -154,7 +154,7 @@ Controller.exportSVG = function() {
 	$.generateFile({
 		filename: filename,
 		content: $('#paper').html(),
-		script: 'http://www.svg-generator.de/download.php'
+		script: 'http://svg-generator.de/download.php'
 	});
 
 	console.log("File " + filename + ".svg exported.");
