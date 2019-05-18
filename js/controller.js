@@ -138,6 +138,19 @@ Controller.randomize = function() {
 	Controller.generate();
 };
 
+Controller.downloadText = function (filename, text) {
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
+    
+    element.style.display = 'none';
+    document.body.appendChild(element);
+    
+    element.click();
+    
+    document.body.removeChild(element);
+}
+
 /**
  * Export current SVG to a File (uses a serverside PHP Script!)
  */
@@ -149,13 +162,7 @@ Controller.exportSVG = function() {
 	// TODO: No leading zeros right now
 	var filename = 'SVG-Export-' + now.getFullYear() + '-' + (1 + now.getMonth()) + '-' + (1 + now.getDay()) + '-' + (1 + now.getHours()) + '-' + (1 + now.getSeconds()) + '.svg';
 
-	// Using a jQuery Plugin for Fileexport:
-	// http://tutorialzine.com/2011/05/generating-files-javascript-php/
-	$.generateFile({
-		filename: filename,
-		content: $('#paper').html(),
-		script: 'http://svg-generator.de/download.php'
-	});
+	Controller.downloadText(filename, $('#paper').html());
 
 	console.log("File " + filename + ".svg exported.");
 };
