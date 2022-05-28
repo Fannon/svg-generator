@@ -2,11 +2,13 @@ SVG Generator
 =============
 
 An online SVG Graphics Generation with the ability to export to SVG. 
-Use it online at https://svg-generator.netlify.com/
 
-It is running purely in the Browser, PHP is only used to trick the browser into downloading the SVG to a File.
+Use it online at https://svg-generator.netlify.com/ (original version) or at https://publicdomainvectors.org/svg-generator.php (embedded version).
 
-Background
-==========
+This is running purely in the browser and does not store / send any data anywhere.
+
+## Background
+
 This is a 3rd Semester Project (2011) by me. 
-Haven't worked on it since then. But maybe I'll finde some time and get it up to date ;)
+Haven't worked on it since then, except fixing the SVG download functionality. 
+But maybe I'll find some time and get it up to date ;)
