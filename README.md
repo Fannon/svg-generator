@@ -9,7 +9,7 @@ This is running purely in the browser and does not store / send any data anywher
 
 ## Screenshot
 
-![image](https://user-images.githubusercontent.com/470980/170816843-57e95974-10d0-48cc-963f-59697d58ef21.png)
+![image](https://user-images.githubusercontent.com/470980/170816861-8cc06b0d-cb6e-4ad0-b8f7-9ba0122baf15.png)
 
 ## Background
 
