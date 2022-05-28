@@ -143,13 +143,17 @@ Parameters.prototype.add = function(id, title, desc, value) {
 	// Add generated html after standard Parameters
 	$('tr#textbox').before(html);
 
-	// Add Tipsy Support to new Parameter
-	$('tr#' + id).tipsy({
-		gravity: 'w'
-	});
-
 	// Save new Parameter in Parameters.added Array
 	this.added.push(id);
+
+	$('#' + id).tooltipster({
+		theme: "tooltipster-borderless",
+		animation: 'fade',
+		animationDuration: 200,
+   		delay: 100,
+		maxWidth: 360,
+		contentAsHTML: true,
+	});
 
 };
 

@@ -553,7 +553,9 @@ Algorithms.prepare.textChars = function() {
 	Controller.params.hide(['stroke', 'strokeW']);
 
 	// Add custom Parameters
-	Controller.params.add('chars', '# of Chars:', 'Number of Chars bundled together', 3);
+	Controller.params.add('rotationMin', 'Rotation (min)', 'Random rotation minimum degree', 180);
+	Controller.params.add('rotationMax', 'Rotation (max)', 'Random rotation maximum degree', 180);
+	Controller.params.add('chars', '# of Chars:', 'Number of Chars bundled together', 1);
 	Controller.params.add('fontfamily', 'Font-Family:', 'Which Font to use', 'Arial');
 
 	// Set Default Variables:
@@ -583,13 +585,15 @@ Algorithms.draw.textChars = function() {
 		fontsize = Math.rnd(Controller.params.minsize, Controller.params.maxsize);
 		text = '';
 
+		const stringArray = splitUnicodeString(Controller.params.textbox)
+		
 		for (var j = 0; j < Controller.params.chars; j += 1) {
-			var k = Math.rnd(0, (Controller.params.textbox.length - 1));
-			text = text + Controller.params.textbox[k];
+			var selectedChar = stringArray[Math.floor(Math.random()*stringArray.length)];
+			text = text + selectedChar;
 		}
 
 		// Draw Text
-		Controller.paper.svg.text(posX, posY, text).attr({
+		Controller.paper.svg.text(posX, posY, selectedChar).attr({
 			'fill': Controller.params.fill,
 			'stroke': Controller.params.stroke,
 			'opacity': (Controller.params.opacity / 100),
@@ -797,3 +801,11 @@ Algorithms.draw.baum = function() {
 	drawTree(320, 240, 70, 90);
 
 };
+
+function splitUnicodeString(str){
+	const arr = [];
+	for(const char of str)
+		arr.push(char)
+		
+	return arr;
+}

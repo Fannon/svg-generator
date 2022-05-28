@@ -40,17 +40,14 @@ $(document).ready(function() { // DOM Ready
 		$(this).ColorPickerSetColor(this.value);
 	});
 
-	/* Using Tipsy Plugin for nice, helping Tooltips:
-	   http://onehackoranother.com/projects/jquery/tipsy/
-	   INFO: Performance Problems when there are much DOM Elements! */
-	$('aside select, aside tr, aside button').tipsy({
-		gravity: 'w',
-		html: true
+	$('.tooltip').tooltipster({
+		theme: "tooltipster-borderless",
+		animation: 'fade',
+		animationDuration: 200,
+   		delay: 100,
+		maxWidth: 360,
+		contentAsHTML: true,
 	});
-	$('nav a').tipsy({
-		gravity: 'ne'
-	});
-
 });
 
 /**

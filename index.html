@@ -8,13 +8,11 @@
 		<meta name="author" content="Simon Heimler" />
 
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
 
 		<!--[if lt IE 9]>
 		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-
-
-
 	</head>
 	<body>
 
@@ -38,77 +36,77 @@
 				<select id="algoselect" onChange="Controller.selectAlgo()" title="Choose between Algorithms">
 					<!-- Algorithm Options will be generated here -->
 				</select>
-				<button id="generate" onclick="Controller.generate()" title="Generate Graphic based on current Selection">Generate!</button>
-				<button id="overlay" onclick="Controller.overlay()" title="Do not reset the paper and draw the new Graphic over the old one">Overlay!</button>
-				<button id="randomize" onclick="Controller.randomize()" title="Randomizes Parameters.">Randomize!</button>
-				<button id="export" onclick="Controller.exportSVG()" title="Export the Graphic to a vector .svg file which can be imported in other programs. (Illustrator, Inkscape...)">Export to SVG</button>
+				<button id="generate" class="tooltip" onclick="Controller.generate()" title="Generate Graphic based on current Selection">Generate!</button>
+				<button id="overlay" class="tooltip" onclick="Controller.overlay()" title="Do not reset the paper and draw the new Graphic over the old one">Overlay!</button>
+				<button id="randomize" class="tooltip" onclick="Controller.randomize()" title="Randomizes Parameters.">Randomize!</button>
+				<button id="export" class="tooltip" onclick="Controller.exportSVG()" title="Export the Graphic to a vector .svg file which can be imported in other programs. (Illustrator, Inkscape...)">Export to SVG</button>
 			</div>
 			<!-- Controls the Algorithm Parameters -->
 			<div id="parameter">
 				<h3>Parameters:</h3>
 
 				<table id="parametertable">
-					<tr id="bgcolor" title="Background Color. <br><i>Use 'none' for no Color</i>">
+					<tr id="bgcolor" class="tooltip" title="Background Color. <br><i>Use 'none' for no Color</i>">
 						<td id="tdwidth">Background:</td>
 						<td>
 							<input class="colorpick" type="text" name="bgcolor"/>
 						</td>
 					</tr>
-					<tr id="count" title="Number of generated Elements<br><i>Must be a number greater than 0</i>">
+					<tr id="count" class="tooltip" title="Number of generated Elements<br><i>Must be a number greater than 0</i>">
 						<td>Count:</td>
 						<td>
 							<input type="text" name="count"/>
 						</td>
 					</tr>
-					<tr id="stroke" title="Color of the stroke (Outline). <br><i>Use 'none' for no Color</i>">
+					<tr id="stroke" class="tooltip" title="Color of the stroke (Outline). <br><i>Use 'none' for no Color</i>">
 						<td>Stroke Color:</td>
 						<td>
 							<input class="colorpick" type="text" name="stroke"/>
 						</td>
 					</tr>
-					<tr id="strokeW" title="Width of the stroke<br><i>Must be a number greater than 0</i>">
+					<tr id="strokeW" class="tooltip" title="Width of the stroke<br><i>Must be a number greater than 0</i>">
 						<td>Stroke Width:</td>
 						<td>
 							<input type="text" name="strokeW"/>
 						</td>
 					</tr>
-					<tr id="fill" title="Color of the fill. <br><i>Use 'none' for no Color</i>">
+					<tr id="fill" class="tooltip" title="Color of the fill. <br><i>Use 'none' for no Color</i>">
 						<td>Fill Color:</td>
 						<td>
 							<input class="colorpick" type="text" name="fill"/>
 						</td>
 					</tr>
-					<tr id="opacity"title="Opacity of the Elements<br><i>Must be a number between 0 and 100</i>">
+					<tr id="opacity" class="tooltip" title="Opacity of the Elements<br><i>Must be a number between 0 and 100</i>">
 						<td>Opacity (%):</td>
 						<td>
 							<input type="text" name="opacity"/>
 						</td>
 					</tr>
-					<tr id="minsize" title="Minimum Size of the Elements<br><i>Must be a number greater than 0</i>">
+					<tr id="minsize" class="tooltip" title="Minimum Size of the Elements<br><i>Must be a number greater than 0</i>">
 						<td>Min Size:</td>
 						<td>
 							<input type="text" name="minsize"/>
 						</td>
 					</tr>
-					<tr id="maxsize" title="Maximum Size of the Elements<br><i>Must be a number greater than 0</i>">
+					<tr id="maxsize" class="tooltip" title="Maximum Size of the Elements<br><i>Must be a number greater than 0</i>">
 						<td>Max Size:</td>
 						<td>
 							<input type="text" name="maxsize"/>
 						</td>
 					</tr>
-					<tr id="paddingV" title="Vertical (top & bottom) Padding<br><i>Must be a positive or negative number</i>">
+					<tr id="paddingV" class="tooltip" title="Vertical (top & bottom) Padding<br><i>Must be a positive or negative number</i>">
 						<td >Padding V:</td>
 						<td>
 							<input type="text" name="paddingV"/>
 						</td>
 					</tr>
-					<tr id="paddingH" title="Horizontal (left & right) Padding<br><i>Must be a positive or negative number</i>">
+					<tr id="paddingH" class="tooltip" title="Horizontal (left & right) Padding<br><i>Must be a positive or negative number</i>">
 						<td>Padding H:</td>
 						<td>
 							<input type="text" name="paddingH"/>
 						</td>
 					</tr>
-					<tr id ="textbox" title="Write your own input text here. Hint: You can use a Character Map Tool">
+					<tr id ="textbox" class="tooltip" title="Write your own input text here. Hint: You can use a Character Map Tool">
 						<td colspan="2">
 							<textarea cols="15" rows="3" name="textbox"></textarea>
 						</td>
@@ -135,15 +133,12 @@
 		<!-- jQuery Plugin: Color Picker http://www.eyecon.ro/colorpicker/ -->
 		<link rel="stylesheet" media="screen" type="text/css" href="lib/colorpicker/css/colorpicker.css" />
 		<script type="text/javascript" src="lib/colorpicker/js/colorpicker.min.js"></script>
-
-		<!-- jQuery Plugin: Tipsy http://onehackoranother.com/projects/jquery/tipsy/ -->
-		<link rel="stylesheet" media="screen" type="text/css" href="css/tipsy.css" />
-		<script type="text/javascript" src="lib/jquery.tipsy.min.js"></script>
+		
+		<script type="text/javascript" src="lib/tooltipster.min.js"></script>
 
 		<script src="js/algorithms.js" type="text/javascript"></script>
 		<script src="js/parameters.js" type="text/javascript"></script>
 		<script src="js/paper.js" type="text/javascript"></script>
 		<script src="js/controller.js" type="text/javascript"></script>
-		<!-- <script src="js/info.js" type="text/javascript"></script> -->
 	</body>
 </html>
