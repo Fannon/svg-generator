@@ -7,6 +7,10 @@ Use it online at https://svg-generator.netlify.com/ (original version) or at htt
 
 This is running purely in the browser and does not store / send any data anywhere.
 
+## Screenshot
+
+![image](https://user-images.githubusercontent.com/470980/170816843-57e95974-10d0-48cc-963f-59697d58ef21.png)
+
 ## Background
 
 This is a 3rd Semester Project (2011) by me. 
