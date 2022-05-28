@@ -555,8 +555,8 @@ Algorithms.prepare.textChars = function() {
 	// Add custom Parameters
 	Controller.params.add('chars', 'Cluster Chars:', 'Number of Chars bundled together', 1);
 	Controller.params.add('fontfamily', 'Font-Family:', 'Which Font to use', 'Arial');
-	Controller.params.add('rotationMin', 'Rotation (min)', 'Random rotation minimum degree', 0);
-	Controller.params.add('rotationMax', 'Rotation (max)', 'Random rotation maximum degree', 0);
+	Controller.params.add('rotationMin', 'Rotation (min)', 'Random rotation minimum degree', -16);
+	Controller.params.add('rotationMax', 'Rotation (max)', 'Random rotation maximum degree', 16);
 
 	// Set Default Variables:
 	Controller.params.set({
@@ -568,7 +568,7 @@ Algorithms.prepare.textChars = function() {
 		maxsize: 300,
 		paddingV: 120,
 		paddingH: 120,
-		textbox: '🌍🤖😸🎉'
+		textbox: '🔥'
 	});
 };
 
@@ -581,9 +581,7 @@ Algorithms.draw.textChars = function() {
 		// Calculations
 		posX = Math.rnd(Controller.params.rotationMin, Controller.paper.X - Controller.params.paddingH);
 		posY = Math.rnd(Controller.params.paddingV, Controller.paper.Y - Controller.params.paddingV);
-
 		rotation = Math.rnd(Controller.params.rotationMin, Controller.params.rotationMax);
-
 		fontsize = Math.rnd(Controller.params.minsize, Controller.params.maxsize);
 		text = '';
 
@@ -593,13 +591,6 @@ Algorithms.draw.textChars = function() {
 			var selectedChar = stringArray[Math.floor(Math.random()*stringArray.length)];
 			text = text + selectedChar;
 		}
-
-		// transform="rotate(90,100,100)"
-		// text-anchor="middle" transform="translate(100,100) rotate(90)"
-		// text-anchor="start"
-		// transform="rotate(90)"
-
-		console.log(rotation)
 
 		// Draw Text
 		Controller.paper.svg.text(posX, posY, text).attr({
@@ -626,6 +617,8 @@ Algorithms.prepare.textWords = function() {
 
 	// Add custom Parameters
 	Controller.params.add('fontfamily', 'Font-Family:', 'Which Font to use', 'Garamond');
+	Controller.params.add('rotationMin', 'Rotation (min)', 'Random rotation minimum degree', 0);
+	Controller.params.add('rotationMax', 'Rotation (max)', 'Random rotation maximum degree', 0);
 
 	// Set Default Variables:
 	Controller.params.set({
@@ -651,6 +644,7 @@ Algorithms.draw.textWords = function() {
 		posX = Math.rnd(Controller.params.paddingH, Controller.paper.X - Controller.params.paddingH);
 		posY = Math.rnd(Controller.params.paddingV, Controller.paper.Y - Controller.params.paddingV);
 		fontsize = Math.rnd(Controller.params.minsize, Controller.params.maxsize);
+		rotation = Math.rnd(Controller.params.rotationMin, Controller.params.rotationMax);
 
 		k = Math.rnd(0, (words.length - 1));
 
@@ -661,7 +655,7 @@ Algorithms.draw.textWords = function() {
 			"opacity": (Controller.params.opacity / 100),
 			'font-size': fontsize,
 			'font-family': Controller.params.fontfamily
-		});
+		}).rotate(rotation);
 	}
 };
 
