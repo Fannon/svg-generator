@@ -1,25 +1,87 @@
-.tipsy { font-size: 10px; position: absolute; padding: 5px; z-index: 100000; }
-  .tipsy-inner { background-color: #000; color: #FFF; max-width: 200px; padding: 5px 8px 4px 8px; text-align: center; }
+/*!
+ * jQuery.tipsy
+ * Copyright (c) 2014 CreativeDream
+ * Version: 1.0 (18-11-2014)
+*/
+.tipsy {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 6px 8px;
+  font-family: sans-serif;
+  font-size: 12px;
+  line-height: normal;
+  color: white;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  background-color: rgba(0,0,0,0.95);
+  z-index: 9999;
+}
 
-  /* Rounded corners */
-  .tipsy-inner { border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; }
-  
-  /* Uncomment for shadow */
-  /*.tipsy-inner { box-shadow: 0 0 5px #000000; -webkit-box-shadow: 0 0 5px #000000; -moz-box-shadow: 0 0 5px #000000; }*/
-  
-  .tipsy-arrow { position: absolute; width: 0; height: 0; line-height: 0; border: 5px dashed #000; }
-  
-  /* Rules to colour arrows */
-  .tipsy-arrow-n { border-bottom-color: #000; }
-  .tipsy-arrow-s { border-top-color: #000; }
-  .tipsy-arrow-e { border-left-color: #000; }
-  .tipsy-arrow-w { border-right-color: #000; }
-  
-	.tipsy-n .tipsy-arrow { top: 0px; left: 50%; margin-left: -5px; border-bottom-style: solid; border-top: none; border-left-color: transparent; border-right-color: transparent; }
-    .tipsy-nw .tipsy-arrow { top: 0; left: 10px; border-bottom-style: solid; border-top: none; border-left-color: transparent; border-right-color: transparent;}
-    .tipsy-ne .tipsy-arrow { top: 0; right: 10px; border-bottom-style: solid; border-top: none;  border-left-color: transparent; border-right-color: transparent;}
-  .tipsy-s .tipsy-arrow { bottom: 0; left: 50%; margin-left: -5px; border-top-style: solid; border-bottom: none;  border-left-color: transparent; border-right-color: transparent; }
-    .tipsy-sw .tipsy-arrow { bottom: 0; left: 10px; border-top-style: solid; border-bottom: none;  border-left-color: transparent; border-right-color: transparent; }
-    .tipsy-se .tipsy-arrow { bottom: 0; right: 10px; border-top-style: solid; border-bottom: none; border-left-color: transparent; border-right-color: transparent; }
-  .tipsy-e .tipsy-arrow { right: 0; top: 50%; margin-top: -5px; border-left-style: solid; border-right: none; border-top-color: transparent; border-bottom-color: transparent; }
-  .tipsy-w .tipsy-arrow { left: 0; top: 50%; margin-top: -5px; border-right-style: solid; border-left: none; border-top-color: transparent; border-bottom-color: transparent; }
+.tipsy:before {
+  position: absolute;
+  bottom: -5px;
+  left: 5px;
+  display: inline-block;
+  content: '';
+  border-right: 5px solid transparent;
+  border-top: 5px solid rgba(0,0,0,0.95);
+  border-bottom: 0 solid rgba(0,0,0,0.95);
+  border-left: 5px solid transparent;
+}
+
+.tipsy.arrow-top:before {
+  bottom: auto;
+  top: -5px;
+  border-top-width: 0;
+  border-bottom-width: 5px;
+}
+
+.tipsy.arrow-bottom:before {
+  bottom: -5px;
+  top: auto;
+  border-top-width: 5px;
+  border-bottom-width: 0;
+}
+
+.tipsy.arrow-left:before {
+  left: 5px;
+  right: auto;
+}
+
+.tipsy.arrow-center:before {
+  left: 50%;
+  right: auto;
+  margin-left: -5px;
+}
+
+.tipsy.arrow-right:before {
+  right: 5px;
+  left: auto;
+}
+
+.tipsy.arrow-side-left:before {
+  top: 50%;
+  bottom: auto;
+  left: 0;
+  right: auto;
+  margin-top: -5px;
+  margin-left: -5px;
+  border-right-color: rgba(0,0,0,0.95);
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 0;
+}
+
+.tipsy.arrow-side-right:before {
+  top: 50%;
+  bottom: auto;
+  right: 0;
+  left: auto;
+  margin-top: -5px;
+  margin-right: -5px;
+  border-left-color: rgba(0,0,0,0.95);
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 0;
+}

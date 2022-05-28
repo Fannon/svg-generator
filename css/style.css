@@ -17,6 +17,8 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
 }
 body {
 	line-height: 1;
+	/** The app was built for very low resolution screens at the time. Adding default zoom to counter this. */ 
+	zoom: 140%;
 }
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 	display: block;

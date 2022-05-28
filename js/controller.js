@@ -152,11 +152,9 @@ Controller.downloadText = function (filename, text) {
 }
 
 /**
- * Export current SVG to a File (uses a serverside PHP Script!)
+ * Export current SVG to a File directly through browser APIs
  */
 Controller.exportSVG = function() {
-	// This won't work without serverside scripting!
-	// Javascript isn't allowed to access the filesystem.
 	var now = new Date();
 
 	// TODO: No leading zeros right now

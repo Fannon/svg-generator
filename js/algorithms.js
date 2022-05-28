@@ -728,7 +728,7 @@ Algorithms.draw.experiment = function() {
 // Sandbox ///////////////////////////////
 //////////////////////////////////////////
 
-Algorithms.title.baum = "Baum Render";
+Algorithms.title.baum = "Tree Render";
 
 Algorithms.prepare.baum = function() {
 

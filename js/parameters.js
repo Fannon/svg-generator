@@ -110,7 +110,6 @@ Parameters.prototype.randomize = function() {
 	this.maxsizeRef.val(Math.rnd(1, 250));
 	this.paddingVRef.val(Math.rnd(-100, 240));
 	this.paddingHRef.val(Math.rnd(-100, 320));
-
 };
 
 /**
