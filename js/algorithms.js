@@ -553,10 +553,10 @@ Algorithms.prepare.textChars = function() {
 	Controller.params.hide(['stroke', 'strokeW']);
 
 	// Add custom Parameters
-	Controller.params.add('rotationMin', 'Rotation (min)', 'Random rotation minimum degree', 180);
-	Controller.params.add('rotationMax', 'Rotation (max)', 'Random rotation maximum degree', 180);
-	Controller.params.add('chars', '# of Chars:', 'Number of Chars bundled together', 1);
+	Controller.params.add('chars', 'Cluster Chars:', 'Number of Chars bundled together', 1);
 	Controller.params.add('fontfamily', 'Font-Family:', 'Which Font to use', 'Arial');
+	Controller.params.add('rotationMin', 'Rotation (min)', 'Random rotation minimum degree', 0);
+	Controller.params.add('rotationMax', 'Rotation (max)', 'Random rotation maximum degree', 0);
 
 	// Set Default Variables:
 	Controller.params.set({
@@ -568,7 +568,7 @@ Algorithms.prepare.textChars = function() {
 		maxsize: 300,
 		paddingV: 120,
 		paddingH: 120,
-		textbox: '{}'
+		textbox: '🌍🤖😸🎉'
 	});
 };
 
@@ -579,8 +579,10 @@ Algorithms.draw.textChars = function() {
 	for (var i = 0; i < Controller.params.count; i += 1) {
 
 		// Calculations
-		posX = Math.rnd(Controller.params.paddingH, Controller.paper.X - Controller.params.paddingH);
+		posX = Math.rnd(Controller.params.rotationMin, Controller.paper.X - Controller.params.paddingH);
 		posY = Math.rnd(Controller.params.paddingV, Controller.paper.Y - Controller.params.paddingV);
+
+		rotation = Math.rnd(Controller.params.rotationMin, Controller.params.rotationMax);
 
 		fontsize = Math.rnd(Controller.params.minsize, Controller.params.maxsize);
 		text = '';
@@ -592,14 +594,21 @@ Algorithms.draw.textChars = function() {
 			text = text + selectedChar;
 		}
 
+		// transform="rotate(90,100,100)"
+		// text-anchor="middle" transform="translate(100,100) rotate(90)"
+		// text-anchor="start"
+		// transform="rotate(90)"
+
+		console.log(rotation)
+
 		// Draw Text
-		Controller.paper.svg.text(posX, posY, selectedChar).attr({
+		Controller.paper.svg.text(posX, posY, text).attr({
 			'fill': Controller.params.fill,
 			'stroke': Controller.params.stroke,
 			'opacity': (Controller.params.opacity / 100),
 			'font-size': fontsize,
-			'font-family': Controller.params.fontfamily
-		});
+			'text-anchor': 'middle'
+		}).rotate(rotation);
 
 	}
 };
