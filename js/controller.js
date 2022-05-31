@@ -25,19 +25,8 @@ $(document).ready(function() { // DOM Ready
 	/* Start Intro on load */
 	Algorithms.draw.intro();
 
-	/* 3rd Party Plugins:
-	   ColorPicker Plugin for the color Parameters
-	   http://www.eyecon.ro/colorpicker/#about */
-	$('.colorpick').ColorPicker({
-		onSubmit: function(hsb, hex, rgb, el) {
-			$(el).val('#' + hex.toUpperCase()); // Uppercase Fix
-			$(el).ColorPickerHide();
-		},
-		onBeforeShow: function() {
-			$(this).ColorPickerSetColor(this.value);
-		}
-	}).bind('keyup', function() {
-		$(this).ColorPickerSetColor(this.value);
+	$('.colorpick').minicolors({
+		letterCase: "uppercase"
 	});
 
 	$('.tooltip').tooltipster({

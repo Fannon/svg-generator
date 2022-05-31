@@ -17,8 +17,6 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
 }
 body {
 	line-height: 1;
-	/** The app was built for very low resolution screens at the time. Adding default zoom to counter this. */ 
-	zoom: 140%;
 }
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -87,9 +85,9 @@ input, select {
 
 body {
 	margin: 20px auto; /* Center */
-	width: 812px;
+	width: 960px;
 	font-family: Verdana, Tahoma, "DejaVu Sans", sans-serif;
-	font-size: 0.75em;
+	font-size: 0.8em;
 	line-height: 1.333em;
 	background: url(../img/bg.png) top center repeat-x #EBEBEB;
 	color: #111;
@@ -143,7 +141,7 @@ header, footer {
 }
 aside {
 	float: left;
-	width: 165px;
+	width: 200px;
 	display: block;
 	margin: 0 5px 5px 0 ;
 }
@@ -158,8 +156,8 @@ aside #parameter {
 
 #paper {
 	float: left;
-	width: 640px; /* 640 + 2*5 margin + 2*1 border */
-	height: 480px;
+	width: 753px; /* 640 + 2*5 margin + 2*1 border */
+	height: 511px;
 	background: #FFF;
 	border: 1px solid #CCC;
 	padding: 0;
@@ -256,15 +254,15 @@ tr.error {
 #generator button {
 	display: block;
 	margin: 5px 0;
-	width: 153px;
+	width: 188px;
 }
 
 select {
-	width: 153px;
+	width: 188px;
 }
 
 input {
-	width: 60px;
+	width: 100px;
 }
 
 textarea {
