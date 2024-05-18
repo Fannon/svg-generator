@@ -3,7 +3,7 @@ SVG Generator
 
 An online SVG Graphics Generation with the ability to export to SVG. 
 
-Use it online at https://svg-generator.netlify.com/ (original version) or at https://publicdomainvectors.org/svg-generator.php (embedded version).
+Use it online at [https://svg-generator.netlify.com/](https://svg-generator.netlify.app/) (original version) or at https://publicdomainvectors.org/svg-generator.php (embedded version).
 
 This is running purely in the browser and does not store / send any data anywhere.
 
